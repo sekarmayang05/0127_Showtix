@@ -22,7 +22,7 @@ mengelola event dan tipe tiket, serta memverifikasi pesanan.
 | 5 | Pemesanan Tiket (CRUDS, upload bukti, invoice) 
 | 6 | Favorit (CRUDS) 
 
-### Minggu 1 ([15 November 2026] - [19 November 2026]): SRS Bab 1 sampai Bab 3
+### Week 9 [15 November 2026] - [19 November 2026]: SRS Bab 1 sampai Bab 3
 - **Bab 1 (Pendahuluan)**: menyusun tujuan dokumen, konvensi penulisan
   (kode kebutuhan REQ-nomor dan prioritas), target pembaca, ruang lingkup
   project, referensi, serta daftar singkatan dan akronim.
@@ -38,7 +38,31 @@ mengelola event dan tipe tiket, serta memverifikasi pesanan.
   Ditolak), dan dua metode pembayaran (transfer dengan upload bukti, dan
   bayar di loket).
 
-## Rencana Minggu Berikutnya
-1. Melengkapi SRS (Bab 4 sampai 6).
-2. Membuat ERD dan skema database MySQL.
-3. Menyiapkan backend dan mulai mengerjakan fitur Autentikasi.
+### Week 10 [20 November 2026 - 24 November 2026] Penyempurnaan SRS (Bab 4 sampai 6) dan Pembuatan Diagram
+
+Di minggu ini aku melanjutkan penyusunan dokumen SRS Showtix dan melengkapi diagram pendukungnya. Belum ada kode aplikasi yang ditulis, jadi fokusnya masih di perancangan.
+
+**Bab 4: Kebutuhan Antarmuka Eksternal**
+Berisi gambaran bagaimana aplikasi berhubungan dengan pihak luar, yaitu antarmuka pengguna (halaman-halaman yang dipakai pengguna dan admin), antarmuka perangkat keras (kebutuhan perangkat Android, kamera untuk memindai barcode, dan akses penyimpanan), serta antarmuka perangkat lunak (komunikasi aplikasi dengan REST API dan basis data).
+
+**Bab 5: Kebutuhan Nonfungsional**
+Berisi syarat mutu aplikasi di luar fitur utama, seperti kinerja, keamanan (login, token, dan penyimpanan kata sandi), kemudahan penggunaan, keandalan, dan kemudahan pemeliharaan. Isinya kubuat secara umum agar tetap sesuai dengan aplikasi ketika sudah jadi.
+
+**Bab 6: Kebutuhan Lain (Basis Data)**
+Berisi rancangan data aplikasi, terdiri dari:
+- **ERD**: gambaran data apa saja yang dikelola dan bagaimana hubungannya (User, Kategori, Event, TipeTiket, Pemesanan, dan Favorit).
+- **RAT (Relasi Antar Tabel)**: struktur tabel yang sebenarnya, lengkap dengan kunci utama dan kunci tamu, beserta aturan saat data induk dihapus.
+- **Kamus Data**: daftar kolom setiap tabel beserta tipe datanya.
+
+**Diagram pendukung**
+- Use case diagram beserta penjelasan alurnya.
+- Flowchart untuk tiap fitur utama (Autentikasi, Kategori, Event, Tipe Tiket, Pemesanan, dan Favorit), dengan pembagian peran Admin dan Pengguna.
+- ERD dan RAT.
+
+**Keputusan teknis yang diambil**
+- Backend memakai Node.js dengan Express (REST API).
+- Basis data memakai PostgreSQL di layanan cloud.
+- Autentikasi memakai JWT dengan refresh token.
+
+**Rencana minggu berikutnya**
+Menyiapkan struktur proyek (Android dan backend), membuat basis data sesuai RAT, lalu mulai mengerjakan fitur autentikasi.
